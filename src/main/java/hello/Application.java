@@ -7,14 +7,15 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
-
+  // Extend SpringBootServletInitializer and override SpringApplicationBuilder to enable war
+  // deployments
+  // (https://docs.spring.io/spring-boot/docs/current/reference/html/howto-traditional-deployment.html)
   @Override
   protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
     return application.sources(Application.class);
   }
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) {
     SpringApplication.run(Application.class, args);
   }
-
 }
